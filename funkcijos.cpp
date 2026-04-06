@@ -74,9 +74,9 @@ void outputas(const vector<Studentas>& grupe, char pasirinkimas) {
     cout << string(50, '-') << endl;
 
     for (const auto& A : grupe) {
-        cout << left << setw(15) << A.vardas << left << setw(20) << A.pavarde;
-        double nd_rez = (pasirinkimas == 'm') ? mediana(A.paz) : vidurkis(A.paz);
-        double galutinis = 0.4 * nd_rez + 0.6 * A.egz;
+        cout << left << setw(15) << A.getVardas() << left << setw(20) << A.getPavarde();
+        double nd_rez = (pasirinkimas == 'm') ? mediana(A.getPaz()) : vidurkis(A.getPaz());
+        double galutinis = 0.4 * nd_rez + 0.6 * A.getEgz();
         cout << setw(15) << galutinis << endl;
     }
 }
@@ -105,9 +105,9 @@ void spausdinimas(const vector<Studentas>& grupe, char pasirinkimas) {
     file << string(50, '-') << endl;
 
     for (const auto& A : grupe) {
-        file << left << setw(15) << A.vardas << left << setw(20) << A.pavarde;
-        double nd_rez = (pasirinkimas == 'm') ? mediana(A.paz) : vidurkis(A.paz);
-        double galutinis = 0.4 * nd_rez + 0.6 * A.egz;
+        file << left << setw(15) << A.getVardas() << left << setw(20) << A.getPavarde();
+        double nd_rez = (pasirinkimas == 'm') ? mediana(A.getPaz()) : vidurkis(A.getPaz());
+        double galutinis = 0.4 * nd_rez + 0.6 * A.getEgz();
         file << setw(15) << galutinis << endl;
     }
 
@@ -121,19 +121,23 @@ void inputas(vector<Studentas>& grupe) {
         Studentas A;
         ii++;
 
+        string vardas;
         cout << "Iveskite " << ii << "-ojo studento varda ('Baigti' - baigti ivedima): ";
-        cin >> A.vardas;
+        cin >> vardas;
+        A.setVardas(vardas);
 
-        if (A.vardas == "Baigti") {
+        if (A.getVardas() == "Baigti") {
             break;
         }
 
+        string pavarde;
         cout << "Iveskite " << ii << "-ojo studento pavarde: ";
-        cin >> A.pavarde;
+        cin >> pavarde;
+        A.setPavarde(pavarde);
 
         while (true) {
             int nd;
-            cout << "Iveskite " << ii << "-ojo studento " << A.paz.size() + 1 << "-aji namu darbo ivertinima (1-10, 0 - baigti): ";
+            cout << "Iveskite " << ii << "-ojo studento " << A.getPaz().size() + 1 << "-aji namu darbo ivertinima (1-10, 0 - baigti): ";
             cin >> nd;
 
             if (!cin.fail() && nd == 0) {
@@ -141,7 +145,7 @@ void inputas(vector<Studentas>& grupe) {
             }
 
             if (!cin.fail() && nd >= 1 && nd <= 10) {
-                A.paz.push_back(nd);
+                A.pridetiPaz(nd);
             } else {
                 cin.clear();
                 cin.ignore(10000, '\n');
@@ -149,13 +153,13 @@ void inputas(vector<Studentas>& grupe) {
             }
         }
 
-        while (A.paz.empty()) {
+        while (A.getPaz().empty()) {
             int nd;
             cout << "Neivestas nei vienas ND. Iveskite bent viena pazymi (1-10): ";
             cin >> nd;
 
             if (!cin.fail() && nd >= 1 && nd <= 10) {
-                A.paz.push_back(nd);
+                A.pridetiPaz(nd);
                 break;
             }
 
@@ -165,10 +169,12 @@ void inputas(vector<Studentas>& grupe) {
         }
 
         while (true) {
+            int egz;
             cout << "Iveskite studento egzamino rezultata (0-10): ";
-            cin >> A.egz;
+            cin >> egz;
+            A.setEgz(egz);
 
-            if (!cin.fail() && A.egz >= 0 && A.egz <= 10) {
+            if (!cin.fail() && A.getEgz() >= 0 && A.getEgz() <= 10) {
                 break;
             }
 
@@ -177,10 +183,10 @@ void inputas(vector<Studentas>& grupe) {
             cout << "Ivedete neteisingai, bandykite dar karta! (0-10)" << endl;
         }
 
-        A.rez = 0;
-        A.galutinisVid = 0.4 * vidurkis(A.paz) + 0.6 * A.egz;
-        A.galutinisMed = 0.4 * mediana(A.paz) + 0.6 * A.egz;
-        A.rez = A.galutinisVid;
+        A.setRez(0);
+        A.setGalutinisVid(0.4 * vidurkis(A.getPaz()) + 0.6 * A.getEgz());
+        A.setGalutinisMed(0.4 * mediana(A.getPaz()) + 0.6 * A.getEgz());
+        A.setRez(A.getGalutinisVid());
         grupe.push_back(A);
     }
 }
