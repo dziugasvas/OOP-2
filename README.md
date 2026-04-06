@@ -5,7 +5,7 @@
 - automatiškai sugeneruoti pažymius arba studentų įrašus;
 - nuskaityti studentų duomenis iš failo;
 - sugeneruoti testinius failus;
-- atlikti skirtingų konteinerių ir studentų skirstymo strategijų veikimo spartos tyrimu.
+- atlikti skirtingų konteinerių ir studentų skirstymo strategijų veikimo spartos tyrimų.
 
 Programoje taip pat realizuotos trys studentų skirstymo strategijos, kurių veikimo laikas lyginamas su skirtingo dydžio duomenų failais ir naudojant vector, list bei deque konteinerius.
 

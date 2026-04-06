@@ -17,9 +17,7 @@ private:
 
 public:
     Studentas() : egz(0), rez(0.0), galutinisVid(0.0), galutinisMed(0.0) {}
-
     Studentas(std::istream& is);
-
     ~Studentas() = default;
 
     const std::string& getVardas() const { return vardas; }
@@ -33,7 +31,6 @@ public:
     void setVardas(const std::string& naujasVardas) { vardas = naujasVardas; }
     void setPavarde(const std::string& naujaPavarde) { pavarde = naujaPavarde; }
     void setPaz(const std::vector<int>& naujiPaz) { paz = naujiPaz; }
-
     void setEgz(int naujasEgz) { egz = naujasEgz; }
     void setRez(double naujasRez) { rez = naujasRez; }
     void setGalutinisVid(double naujasGalutinisVid) { galutinisVid = naujasGalutinisVid; }
