@@ -6,7 +6,6 @@
 #include <list>
 #include <deque>
 #include <cctype>
-#include "Studentas.h"
 #include "funkcijos.h"
 
 using std::vector;
@@ -14,8 +13,6 @@ using std::string;
 using std::cout;
 using std::cin;
 using std::endl;
-using std::list;
-using std::deque;
 
 const vector<string> vardai = {"Dovydas", "Matas", "Simonas", "Rokas", "Kajus", "Dziugas", "Virgilijus", "Vitalijus", "Alan", "Aleksas", "Jonas", "Domantas", "Arvydas", "Mantyvdas", "Gvidas"};
 const vector<string> pavardes = {"Kazlauskas", "Buzelis", "Sabonis", "Tubelis", "Gudelis", "Macijauskas", "Alekna", "Vanagas", "Butkevicius", "Ulanovas", "Sirvydis", "Jasikevicius", "Jakucionis", "Kleiza", "Jonauskas"};

@@ -1,19 +1,14 @@
 #include "funkcijos.h"
-#include "Studentas.h"
 #include <fstream>
 #include <iostream>
 #include <cstdlib>
 #include <iomanip>
 #include <stdexcept>
-#include <sstream>
 #include <algorithm>
 #include <vector>
 #include <chrono>
 
 using std::ofstream;
-using std::ifstream;
-using std::getline;
-using std::stringstream;
 using std::cout;
 using std::cin;
 using std::endl;
@@ -21,9 +16,7 @@ using std::setw;
 using std::left;
 using std::vector;
 using std::string;
-using std::right;
 using std::sort;
-using std::fixed;
 using std::setprecision;
 
 void generuotiFaila(const std::string& failoPavadinimas, int studentuKiekis, int ndKiekis) {
@@ -172,9 +165,9 @@ void inputas(vector<Studentas>& grupe) {
             int egz;
             cout << "Iveskite studento egzamino rezultata (0-10): ";
             cin >> egz;
-            A.setEgz(egz);
 
-            if (!cin.fail() && A.getEgz() >= 0 && A.getEgz() <= 10) {
+            if (!cin.fail() && egz >= 0 && egz <= 10) {
+                A.setEgz(egz);
                 break;
             }
 
