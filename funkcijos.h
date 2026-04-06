@@ -50,9 +50,13 @@ void nuskaitymas(konteineris& grupe, std::string failas) {
         std::stringstream ss(eilute);
         Studentas s;
 
-        ss >> s.vardas >> s.pavarde;
+        std::string vardas, pavarde;
+        ss >> vardas >> pavarde;
 
-        if (s.vardas.empty() || s.pavarde.empty()) {
+        s.setVardas(vardas);
+        s.setPavarde(pavarde);
+
+        if (s.getVardas().empty() || s.getPavarde().empty()) {
             continue;
         }
 
@@ -67,11 +71,12 @@ void nuskaitymas(konteineris& grupe, std::string failas) {
             continue;
         }
 
-        s.egz = paz.back();
-        paz.pop_back();
-        s.paz = paz;
-        s.galutinisVid = 0.4 * vidurkis(s.paz) + 0.6 * s.egz;
-        s.galutinisMed = 0.4 * mediana(s.paz) + 0.6 * s.egz;
+        s.setEgz(paz.back());
+        paz.pop_back(); 
+
+        s.setPaz(paz);
+        s.setGalutinisVid(0.4 * vidurkis(s.getPaz()) + 0.6 * s.getEgz());
+        s.setGalutinisMed(0.4 * mediana(s.getPaz()) + 0.6 * s.getEgz());
 
         grupe.push_back(s);
     }

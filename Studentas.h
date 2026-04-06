@@ -30,6 +30,10 @@ public:
     double getGalutinisVid() const { return galutinisVid; }
     double getGalutinisMed() const { return galutinisMed; }
 
+    void setVardas(const std::string& naujasVardas) { vardas = naujasVardas; }
+    void setPavarde(const std::string& naujaPavarde) { pavarde = naujaPavarde; }
+    void setPaz(const std::vector<int>& naujiPaz) { paz = naujiPaz; }
+
     void setEgz(int naujasEgz) { egz = naujasEgz; }
     void setRez(double naujasRez) { rez = naujasRez; }
     void setGalutinisVid(double naujasGalutinisVid) { galutinisVid = naujasGalutinisVid; }
