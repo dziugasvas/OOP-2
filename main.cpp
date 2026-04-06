@@ -71,31 +71,37 @@ int main() {
                     Studentas A;
                     ii++;
 
+                    string vardas;
                     cout << "Iveskite " << ii << "-ojo studento varda ('Baigti' - baigti ivedima): ";
-                    cin >> A.vardas;
+                    cin >> vardas;
+                    A.setVardas(vardas);
 
-                    if (A.vardas == "Baigti") break;
+                    if (A.getVardas() == "Baigti") {
+                        break;
+                    }
 
+                    string pavarde;
                     cout << "Iveskite " << ii << "-ojo studento pavarde: ";
-                    cin >> A.pavarde;
+                    cin >> pavarde;
+                    A.setPavarde(pavarde);
 
-                    A.paz.clear();
+                    A.isvalytiPaz();
 
                     for (int i = 0; i < kiek; i++) {
                         int nd = rand() % 10 + 1;
-                        A.paz.push_back(nd);
+                        A.pridetiPaz(nd);
                     }
 
-                    A.egz = rand() % 10 + 1;
-                    A.rez = 0;
+                    A.setEgz(rand() % 10 + 1);
+                    A.setRez(0);
 
-                    A.galutinisVid = 0.4 * vidurkis(A.paz) + 0.6 * A.egz;
-                    A.galutinisMed = 0.4 * mediana(A.paz) + 0.6 * A.egz;
-                    A.rez = A.galutinisVid;
+                    A.setGalutinisVid(0.4 * vidurkis(A.getPaz()) + 0.6 * A.getEgz());
+                    A.setGalutinisMed(0.4 * mediana(A.getPaz()) + 0.6 * A.getEgz());
+                    A.setRez(A.getGalutinisVid());
 
                     grupe.push_back(A);
 
-                    cout << "Sugeneruota: " << kiek << " ND pazymiai. Egzamino pazymys = " << A.egz << endl;
+                    cout << "Sugeneruota: " << kiek << " ND pazymiai. Egzamino pazymys = " << A.getEgz() << endl;
                 }
                 break;
             }
@@ -126,22 +132,22 @@ int main() {
                 for (int i = 0; i < m; i++) {
                     Studentas A;
 
-                    A.vardas = vardai[rand() % vardai.size()];
-                    A.pavarde = pavardes[rand() % pavardes.size()];
+                    A.setVardas(vardai[rand() % vardai.size()]);
+                    A.setPavarde(pavardes[rand() % pavardes.size()]);
 
                     int sum = 0;
                     for (int j = 0; j < kiek; j++) {
                         int nd = rand() % 10 + 1;
-                        A.paz.push_back(nd);
+                        A.pridetiPaz(nd);
                         sum += nd;
                     }
 
-                    A.egz = rand() % 10 + 1;
+                    A.setEgz(rand() % 10 + 1);
 
-                    double nd_vid = sum * 1.0 / A.paz.size();
-                    A.galutinisVid = 0.4 * nd_vid + 0.6 * A.egz;
-                    A.galutinisMed = 0.4 * mediana(A.paz) + 0.6 * A.egz;
-                    A.rez = 0.4 * nd_vid + 0.6 * A.egz;
+                    double nd_vid = sum * 1.0 / A.getPaz().size();
+                    A.setGalutinisVid(0.4 * nd_vid + 0.6 * A.getEgz());
+                    A.setGalutinisMed(0.4 * mediana(A.getPaz()) + 0.6 * A.getEgz());
+                    A.setRez(0.4 * nd_vid + 0.6 * A.getEgz());
 
                     grupe.push_back(A);
                 }
@@ -221,8 +227,8 @@ int main() {
                     cin >> ndKiekis;
                 }
 
-                vector<int> dydžiai = {1000, 10000, 100000, 1000000, 10000000};
-                for (int d : dydžiai) {
+                vector<int> dydziai = {1000, 10000, 100000, 1000000, 10000000};
+                for (int d : dydziai) {
                     string fn = "test_" + std::to_string(d) + ".txt";
                     tyrimas1(fn, d, ndKiekis);
                 }
@@ -242,8 +248,8 @@ int main() {
                     cin >> budas;
                 }
 
-                vector<int> dydžiai = {1000, 10000, 100000, 1000000, 10000000};
-                for (int d : dydžiai) {
+                vector<int> dydziai = {1000, 10000, 100000, 1000000, 10000000};
+                for (int d : dydziai) {
                     string fn = "test_" + std::to_string(d) + ".txt";
                     tyrimas2(fn, budas);
                 }
