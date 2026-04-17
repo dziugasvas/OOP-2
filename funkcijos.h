@@ -121,6 +121,11 @@ void padalintiStudentus2(konteineris& grupe, konteineris& vargsiukai, char budas
             break;
         }
     }
+
+    if constexpr (std::is_same_v<konteineris, std::vector<Studentas>>) {
+        vargsiukai.shrink_to_fit();
+        grupe.shrink_to_fit();
+    }
 }
 
 template <typename konteineris>
