@@ -14,6 +14,9 @@ public:
     Zmogus(const std::string& vardas, const std::string& pavarde)
         : vardas(vardas), pavarde(pavarde) {}
 
+    Zmogus(Zmogus&& kitas)
+        : vardas(std::move(kitas.vardas)), pavarde(std::move(kitas.pavarde)) {}
+        
     virtual ~Zmogus() = default;
 
     virtual const std::string& getVardas() const = 0;

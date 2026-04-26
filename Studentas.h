@@ -35,7 +35,7 @@ public:
        galutinisVid(kitas.galutinisVid), galutinisMed(kitas.galutinisMed) {}
 
     Studentas(Studentas&& kitas)
-      : Zmogus(std::move(kitas.vardas), std::move(kitas.pavarde)),
+      : Zmogus(std::move(kitas)),
         paz(std::move(kitas.paz)), 
         egz(std::move(kitas.egz)),
         rez(std::move(kitas.rez)), 
