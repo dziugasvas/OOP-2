@@ -7,6 +7,7 @@
 #include <deque>
 #include <cctype>
 #include "funkcijos.h"
+#include "testas.h"
 
 using std::vector;
 using std::string;
@@ -34,7 +35,8 @@ int main() {
         cout << "7 - Tyrimas 2 (duomenu apdorojimo greitis)" << endl;
         cout << "8 - Atlikti strategiju tyrimus" << endl;
         cout << "9 - Spausdinti rezultatus" << endl;
-        cout << "10 - Baigti darba" << endl;
+        cout << "10 - Atlikti testus" << endl;
+        cout << "11 - Baigti darba" << endl;
 
         int p;
         cin >> p;
@@ -374,6 +376,19 @@ int main() {
             }
 
             case 10: {
+                cout << "Testai pradedami!" << endl;
+                testDefaultConstructor();
+                testCopyConstructor();
+                testCopyAssignment();
+                testMoveConstructor();
+                testMoveAssignment();
+                testDestructor();
+                testInputOutputOperators();
+                cout << "Testai sekmingai praejo!" << endl;
+                break;
+            }
+
+            case 11: {
                 cout << "Programa baigiama." << endl;
                 veikia = false;
                 break;

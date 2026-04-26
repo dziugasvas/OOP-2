@@ -89,7 +89,7 @@ public:
         return os;
     }
 
-    friend std::istream& operator<<(std::istream& in, Studentas& s) {
+    friend std::istream& operator>>(std::istream& in, Studentas& s) {
         std::string eilute;
         std::getline(in, eilute);
         std::stringstream ss(eilute);
