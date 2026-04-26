@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <sstream>
 
 class Studentas {
 private:
@@ -87,6 +88,23 @@ public:
         os << s.egz;
         return os;
     }
+
+    friend std::istream& operator<<(std::istream& in, Studentas& s) {
+        std::string eilute;
+        std::getline(in, eilute);
+        std::stringstream ss(eilute);
+        ss >> s.vardas >> s.pavarde;
+        int skaicius;
+        std::vector <int> visi;
+        while (ss >> skaicius) {
+            visi.push_back(skaicius);
+        }
+        s.egz = visi.back();
+        visi.pop_back();
+        s.paz = visi;
+        return in;
+    }
+
 
     const std::string& getVardas() const { return vardas; }
     const std::string& getPavarde() const { return pavarde; }
