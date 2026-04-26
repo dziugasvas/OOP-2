@@ -57,32 +57,24 @@ Pasirinkus atitinkamą meniu punktą, programa pateikia papildomas instrukcijas 
 | Apple M4 (10 branduolių) | 24GB | NVMe 512GB |      
 ------------------------------------------------
 
-## v1.1 rezultatai
+## v1.2 rezultatai
 
-Šioje versijoje (v1.1) programa perrašyta naudojant `class` vietoje `struct`. 
-Atliktas tyrimas siekiant palyginti šių dviejų realizacijų efektyvumą apdorojant studentų duomenis.
+| Metodas                     | Sintaksė                                       | Paskirtis                                       |
+|-----------------------------|------------------------------------------------|-------------------------------------------------|
+| Copy konstruktorius         | `Studentas(const Studentas& kitas)`            | Kuriama objekto kopija                          |
+| Copy priskyrimo operatorius | `Studentas& operator=(const Studentas& kitas)` | Objekto kopijos priskyrimas - b = a             |
+| Move konstruktorius         | `Studentas(Studentas&& kitas)`                 | Objekto perkėlimas - Studentas b = std::move(a) |
+| Move priskyrimo operatorius | `Studentas& operator=(Studentas&& kitas)`      | Objekto perkėlimas - b = std::move(a)           |
+| Destruktorius               | `~Studentas()`                                 | Objekto sunaikinimas (veikia automatiškai)      |
+----------------------------------------------------------------------------------------------------------------------------------
 
-Testavimas atliktas:
-- naudojant **vector konteinerį**
-- taikant **3 skirstymo strategiją (partition)**
-- su skirtingais kompiliatoriaus optimizavimo lygiais: **-O1, -O2, -O3**
+### I/O operatoriai
+ 
+| Operatorius  | Paskirtis                             |
+|--------------|---------------------------------------|
+| `operator>>` | Nuskaito duomenis iš srauto į objektą |
+| `operator<<` | Išveda objekto duomenis į srautą      |
+--------------------------------------------------------
 
-# Tyrimo rezultatai
+### Testų nuotrauka
 
-100000 studentų
-
-| Optimizacija | Laikas (class) | Laikas (struct) | Failo dydis (class) | Failo dydis (struct) |
-|--------------|----------------|-----------------|---------------------|----------------------|
-| -O1          |  0.259675 s    | 0.246076 s      | 326 KB              |     339 KB           |
-| -O2          |  0.249686 s    | 0.244191 s      | 309 KB              |     322 KB           |
-| -O3          |  0.249245 s    | 0.247485 s      | 341 KB              |     323 KB           |
-------------------------------------------------------------------------------------------------
-
-1000000 studentų
-
-| Optimizacija | Laikas (class) | Laikas (struct) | Failo dydis (class) | Failo dydis (struct) |
-|--------------|----------------|-----------------|---------------------|----------------------|
-| -O1          | 1.30572 s      | 1.23554 s       | 326 KB              |  339 KB              |
-| -O2          | 1.25852 s      | 1.20096 s       | 309 KB              |  322 KB              |
-| -O3          | 1.25299 s      | 1.20199 s       | 341 KB              |  323 KB              |
-------------------------------------------------------------------------------------------------
