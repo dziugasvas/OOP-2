@@ -59,12 +59,12 @@ Pasirinkus atitinkamą meniu punktą, programa pateikia papildomas instrukcijas 
 
 ## v1.5 rezultatai
 
-Šioje versijoje išlaikyta ta pati v1.2 versijos logika, tačiau pridėta abstrakti bazinė klasė `Zmogus` ir iš jos išvesta `Studentas` klasė.
+Šioje versijoje programa išlieka veiksminga kaip ir v1.2, tačiau `Studentas` klasė dabar paveldi iš abstrakčios bazinės klasės `Zmogus`.
 
-| Klasė       | Tipas    | Ką saugo                                        |
+| Klasė       | Tipas    | Saugomi duomenys                                |
 |-------------|----------|-------------------------------------------------|
-| `Zmogus`    | Abstract | vardą ir pavardę                                |
-| `Studentas` | Derived  | pažymius, egzamino balą, galutinius įvertinimus |
+| `Zmogus`    | Abstract | Vardas ir pavardė                               |
+| `Studentas` | Derived  | Pažymiai, egzamino balas, galutiniai įverčiai   |
 ----------------------------------------------------------------------------
 
 ### Bandymas sukurti abstrakčios klasės objektą:
