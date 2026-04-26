@@ -44,7 +44,7 @@ int main() {
         if (cin.fail()) {
             cin.clear();
             cin.ignore(10000, '\n');
-            cout << "Klaida: iveskite skaiciu 1-10" << endl;
+            cout << "Klaida: iveskite skaiciu 1-11" << endl;
             continue;
         }
 
