@@ -71,19 +71,7 @@ Pasirinkus atitinkamą meniu punktą, programa pateikia papildomas instrukcijas 
 
 `Zmogus z("LeBron", "James");`
 
-### "Rule of five"
-
-| Metodas | Sintaksė | Paskirtis |
-|---------|----------|-----------|
-| Copy konstruktorius | `Studentas(const Studentas& kitas)` | Kuriama objekto kopija |
-| Copy priskyrimo operatorius | `Studentas& operator=(const Studentas& kitas)` | Objekto kopijos priskyrimas |
-| Move konstruktorius | `Studentas(Studentas&& kitas)` | Objekto perkėlimas |
-| Move priskyrimo operatorius | `Studentas& operator=(Studentas&& kitas)` | Objekto perkėlimas |
-| Destruktorius | `~Studentas()` | Objekto sunaikinimas |
-
-### Testų nuotrauka
-
-
+<img width="593" height="354" alt="image" src="https://github.com/user-attachments/assets/2f2e4af1-791d-41b8-a577-ed27e6f7c4a3" />
 
 ## v1.2 rezultatai (Rule of five)
 
