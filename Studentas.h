@@ -1,15 +1,14 @@
 #ifndef STUDENTAS_H
 #define STUDENTAS_H
 
+#include "Zmogus.h"
 #include <iostream>
 #include <string>
 #include <vector>
 #include <sstream>
 
-class Studentas {
+class Studentas : public Zmogus {
 private:
-    std::string vardas;
-    std::string pavarde;
     std::vector<int> paz;
     int egz;
     double rez;
@@ -17,11 +16,10 @@ private:
     double galutinisMed;
 
 public:
-
     Studentas() 
-       : egz(0), rez(0.0), galutinisVid(0.0), galutinisMed(0.0) {}
+       : Zmogus(), egz(0), rez(0.0), galutinisVid(0.0), galutinisMed(0.0) {}
 
-    ~Studentas() {
+    ~Studentas () override {
         vardas.clear();
         pavarde.clear();
         paz.clear();
@@ -32,13 +30,12 @@ public:
     }
 
     Studentas(const Studentas& kitas) 
-       : vardas(kitas.vardas), pavarde(kitas.pavarde), 
+       : Zmogus(kitas.vardas, kitas.pavarde), 
        paz(kitas.paz), egz(kitas.egz), rez(kitas.rez), 
        galutinisVid(kitas.galutinisVid), galutinisMed(kitas.galutinisMed) {}
-       
+
     Studentas(Studentas&& kitas)
-      : vardas(std::move(kitas.vardas)),
-        pavarde(std::move(kitas.pavarde)), 
+      : Zmogus(std::move(kitas.vardas), std::move(kitas.pavarde)),
         paz(std::move(kitas.paz)), 
         egz(std::move(kitas.egz)),
         rez(std::move(kitas.rez)), 
@@ -80,45 +77,38 @@ public:
         return *this;
     }
 
-    friend std::ostream& operator<<(std::ostream& os, const Studentas& s) {
-        os << s.vardas << " " << s.pavarde << " ";
-        for (int p : s.paz) {
-            os << p << " ";
-        }
-        os << s.egz;
-        return os;
+    const std::string& getVardas() const override { return vardas; }
+    const std::string& getPavarde() const override { return pavarde; }
+    void setVardas(const std::string& v) override { vardas = v; }
+    void setPavarde(const std::string& p) override { pavarde = p; }
+
+    void print(std::ostream& os) const override {
+        os << vardas << " " << pavarde << " ";
+        for (int p : paz) os << p << " ";
+        os << egz;
     }
 
-    friend std::istream& operator>>(std::istream& in, Studentas& s) {
+    void read(std::istream& in) override {
         std::string eilute;
         std::getline(in, eilute);
         std::stringstream ss(eilute);
-        ss >> s.vardas >> s.pavarde;
+        ss >> vardas >> pavarde;
+        std::vector<int> visi;
         int skaicius;
-        std::vector <int> visi;
-        while (ss >> skaicius) {
-            visi.push_back(skaicius);
-        }
-
+        while (ss >> skaicius) visi.push_back(skaicius);
         if (!visi.empty()) {
-            s.egz = visi.back();
+            egz = visi.back();
             visi.pop_back();
         }
-        s.paz = visi;
-        return in;
+        paz = visi;
     }
 
-
-    const std::string& getVardas() const { return vardas; }
-    const std::string& getPavarde() const { return pavarde; }
     const std::vector<int>& getPaz() const { return paz; }
     int getEgz() const { return egz; }
     double getRez() const { return rez; }
     double getGalutinisVid() const { return galutinisVid; }
     double getGalutinisMed() const { return galutinisMed; }
 
-    void setVardas(const std::string& naujasVardas) { vardas = naujasVardas; }
-    void setPavarde(const std::string& naujaPavarde) { pavarde = naujaPavarde; }
     void setPaz(const std::vector<int>& naujiPaz) { paz = naujiPaz; }
     void setEgz(int naujasEgz) { egz = naujasEgz; }
     void setRez(double naujasRez) { rez = naujasRez; }
