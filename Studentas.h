@@ -99,8 +99,11 @@ public:
         while (ss >> skaicius) {
             visi.push_back(skaicius);
         }
-        s.egz = visi.back();
-        visi.pop_back();
+
+        if (!visi.empty()) {
+            s.egz = visi.back();
+            visi.pop_back();
+        }
         s.paz = visi;
         return in;
     }
