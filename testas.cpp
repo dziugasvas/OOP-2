@@ -112,3 +112,11 @@ void testInputOutputOperators() {
     assert(rezultatas.str() == "Rokas Rokauskas 5 6 7 8");
     std::cout << "Įvesties/išvesties operatorių testas sekmingas\n";
 }
+
+void testAbstrakcijaZmogus() {
+    Studentas s;
+    Zmogus& ref = s;
+    ref.setVardas("Testas");
+    assert(ref.getVardas() == "Testas");
+    std::cout << "Abstrakcios klases Zmogus testas sekmingas\n";
+}

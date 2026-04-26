@@ -1,6 +1,7 @@
 #ifndef FUNKCIJOS_H
 #define FUNKCIJOS_H
 
+#include "Zmogus.h"
 #include "Studentas.h"
 #include <vector>
 #include <string>

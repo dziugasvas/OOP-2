@@ -8,5 +8,6 @@ void testMoveConstructor();
 void testMoveAssignment();
 void testDestructor();
 void testInputOutputOperators();
+void testAbstrakcijaZmogus();
 
 #endif

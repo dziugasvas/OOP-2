@@ -384,6 +384,7 @@ int main() {
                 testMoveAssignment();
                 testDestructor();
                 testInputOutputOperators();
+                testAbstrakcijaZmogus();
                 cout << "Testai sekmingai praejo!" << endl;
                 break;
             }
