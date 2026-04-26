@@ -62,6 +62,23 @@ public:
         return *this;
     }
 
+    Studentas& operator=(Studentas&& kitas) {
+        if (this != &kitas) {
+            vardas = std::move(kitas.vardas);
+            pavarde = std::move(kitas.pavarde);
+            paz = std::move(kitas.paz);
+            egz = std::move(kitas.egz);
+            rez = std::move(kitas.rez);
+            galutinisVid = std::move(kitas.galutinisVid);
+            galutinisMed = std::move(kitas.galutinisMed);
+            kitas.egz = 0;
+            kitas.rez = 0.0;
+            kitas.galutinisVid = 0.0;
+            kitas.galutinisMed = 0.0;
+        }
+        return *this;
+    }
+
     const std::string& getVardas() const { return vardas; }
     const std::string& getPavarde() const { return pavarde; }
     const std::vector<int>& getPaz() const { return paz; }
