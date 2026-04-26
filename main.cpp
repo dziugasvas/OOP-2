@@ -385,6 +385,7 @@ int main() {
                 testDestructor();
                 testInputOutputOperators();
                 testAbstrakcijaZmogus();
+                // Zmogus z("LeBron", "James");
                 cout << "Testai sekmingai praejo!" << endl;
                 break;
             }

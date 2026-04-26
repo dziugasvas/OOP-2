@@ -57,7 +57,35 @@ Pasirinkus atitinkamą meniu punktą, programa pateikia papildomas instrukcijas 
 | Apple M4 (10 branduolių) | 24GB | NVMe 512GB |      
 ------------------------------------------------
 
-## v1.2 rezultatai
+## v1.5 rezultatai
+
+Šioje versijoje išlaikyta ta pati v1.2 versijos logika, tačiau pridėta abstrakti bazinė klasė `Zmogus` ir iš jos išvesta `Studentas` klasė.
+
+| Klasė       | Tipas    | Ką saugo                                        |
+|-------------|----------|-------------------------------------------------|
+| `Zmogus`    | Abstract | vardą ir pavardę                                |
+| `Studentas` | Derived  | pažymius, egzamino balą, galutinius įvertinimus |
+----------------------------------------------------------------------------
+
+### Bandymas sukurti abstrakčios klasės objektą:
+
+`Zmogus z("LeBron", "James");`
+
+### "Rule of five"
+
+| Metodas | Sintaksė | Paskirtis |
+|---------|----------|-----------|
+| Copy konstruktorius | `Studentas(const Studentas& kitas)` | Kuriama objekto kopija |
+| Copy priskyrimo operatorius | `Studentas& operator=(const Studentas& kitas)` | Objekto kopijos priskyrimas |
+| Move konstruktorius | `Studentas(Studentas&& kitas)` | Objekto perkėlimas |
+| Move priskyrimo operatorius | `Studentas& operator=(Studentas&& kitas)` | Objekto perkėlimas |
+| Destruktorius | `~Studentas()` | Objekto sunaikinimas |
+
+### Testų nuotrauka
+
+
+
+## v1.2 rezultatai (Rule of five)
 
 | Metodas                     | Sintaksė                                       | Paskirtis                                       |
 |-----------------------------|------------------------------------------------|-------------------------------------------------|
@@ -67,14 +95,6 @@ Pasirinkus atitinkamą meniu punktą, programa pateikia papildomas instrukcijas 
 | Move priskyrimo operatorius | `Studentas& operator=(Studentas&& kitas)`      | Objekto perkėlimas - b = std::move(a)           |
 | Destruktorius               | `~Studentas()`                                 | Objekto sunaikinimas (veikia automatiškai)      |
 ----------------------------------------------------------------------------------------------------------------------------------
-
-### I/O operatoriai
- 
-| Operatorius  | Paskirtis                             |
-|--------------|---------------------------------------|
-| `operator>>` | Nuskaito duomenis iš srauto į objektą |
-| `operator<<` | Išveda objekto duomenis į srautą      |
---------------------------------------------------------
 
 ### Testų nuotrauka
 
