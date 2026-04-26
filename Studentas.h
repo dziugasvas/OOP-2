@@ -16,9 +16,17 @@ private:
     double galutinisMed;
 
 public:
+
     Studentas() : egz(0), rez(0.0), galutinisVid(0.0), galutinisMed(0.0) {}
-    Studentas(std::istream& is);
-    ~Studentas() = default;
+    ~Studentas() {
+        vardas.clear();
+        pavarde.clear();
+        paz.clear();
+        egz = 0;
+        rez = 0.0; 
+        galutinisMed = 0.0;
+        galutinisVid = 0.0;
+    }
 
     const std::string& getVardas() const { return vardas; }
     const std::string& getPavarde() const { return pavarde; }
@@ -38,8 +46,6 @@ public:
 
     void pridetiPaz(int pazymys) { paz.push_back(pazymys); }
     void isvalytiPaz() { paz.clear(); }
-
-    std::istream& readStudent(std::istream& is);
 };
 
 #endif
