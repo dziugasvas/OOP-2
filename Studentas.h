@@ -79,6 +79,15 @@ public:
         return *this;
     }
 
+    friend std::ostream& operator<<(std::ostream& os, const Studentas& s) {
+        os << s.vardas << " " << s.pavarde << " ";
+        for (int p : s.paz) {
+            os << p << " ";
+        }
+        os << s.egz;
+        return os;
+    }
+
     const std::string& getVardas() const { return vardas; }
     const std::string& getPavarde() const { return pavarde; }
     const std::vector<int>& getPaz() const { return paz; }
