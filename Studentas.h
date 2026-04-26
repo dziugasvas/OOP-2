@@ -49,6 +49,19 @@ public:
        kitas.galutinisMed = 0.0;
     }
 
+    Studentas& operator=(const Studentas& kitas) {
+        if (this != &kitas) {
+            vardas = kitas.vardas;
+            pavarde = kitas.pavarde;
+            paz = kitas.paz;
+            egz = kitas.egz;
+            rez = kitas.rez;
+            galutinisVid = kitas.galutinisVid;
+            galutinisMed = kitas.galutinisMed;
+        }
+        return *this;
+    }
+
     const std::string& getVardas() const { return vardas; }
     const std::string& getPavarde() const { return pavarde; }
     const std::vector<int>& getPaz() const { return paz; }
