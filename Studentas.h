@@ -17,7 +17,9 @@ private:
 
 public:
 
-    Studentas() : egz(0), rez(0.0), galutinisVid(0.0), galutinisMed(0.0) {}
+    Studentas() 
+       : egz(0), rez(0.0), galutinisVid(0.0), galutinisMed(0.0) {}
+
     ~Studentas() {
         vardas.clear();
         pavarde.clear();
@@ -27,6 +29,11 @@ public:
         galutinisMed = 0.0;
         galutinisVid = 0.0;
     }
+
+    Studentas(const Studentas& kitas) 
+       : vardas(kitas.vardas), pavarde(kitas.pavarde), 
+       paz(kitas.paz), egz(kitas.egz), rez(kitas.rez), 
+       galutinisVid(kitas.galutinisVid), galutinisMed(kitas.galutinisMed) {}
 
     const std::string& getVardas() const { return vardas; }
     const std::string& getPavarde() const { return pavarde; }
