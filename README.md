@@ -78,3 +78,5 @@ Pasirinkus atitinkamą meniu punktą, programa pateikia papildomas instrukcijas 
 
 ### Testų nuotrauka
 
+<img width="343" height="131" alt="Screenshot at Apr 26 20-51-33" src="https://github.com/user-attachments/assets/b449e0d0-504c-4785-8fbe-da3d9a6920c5" />
+
