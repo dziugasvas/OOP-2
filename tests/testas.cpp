@@ -1,122 +1,145 @@
+#include <gtest/gtest.h>
 #include "Studentas.h"
-#include "testas.h"
-#include <cassert>
-#include <iostream>
+#include "funkcijos.h"
 #include <sstream>
 #include <vector>
 
-void testDefaultConstructor() {
+TEST(StudentasTest, DefaultConstructor) {
     Studentas s;
-    assert(s.getVardas().empty());
-    assert(s.getPavarde().empty());
-    assert(s.getPaz().empty());
-    assert(s.getEgz() == 0);
-    assert(s.getRez() == 0.0);
-    std::cout << "Default konstruktoriaus testas sekmingas\n";
+    EXPECT_TRUE(s.getVardas().empty());
+    EXPECT_TRUE(s.getPavarde().empty());
+    EXPECT_TRUE(s.getPaz().empty());
+    EXPECT_EQ(s.getEgz(), 0);
+    EXPECT_EQ(s.getRez(), 0.0);
 }
 
-void testCopyConstructor() {
+TEST(StudentasTest, CopyConstructor) {
     Studentas s;
-    std::vector<int> paz = {5, 7, 8};
     s.setVardas("Tomas");
     s.setPavarde("Tomauskas");
-    s.setPaz(paz);
+    s.setPaz({5, 7, 8});
     s.setEgz(7);
-    Studentas kopija(s);
-    assert(kopija.getVardas() == s.getVardas());
-    assert(kopija.getPavarde() == s.getPavarde());
-    assert(kopija.getPaz() == s.getPaz());
-    assert(kopija.getEgz() == s.getEgz());
-    kopija.setVardas("Kitas");
-    assert(s.getVardas() == "Tomas");
-    std::cout << "Copy konstruktoriaus testas sekmingas\n";
+
+    Studentas copy(s);
+    EXPECT_EQ(copy.getVardas(), s.getVardas());
+    EXPECT_EQ(copy.getPavarde(), s.getPavarde());
+    EXPECT_EQ(copy.getPaz(), s.getPaz());
+    EXPECT_EQ(copy.getEgz(), s.getEgz());
+
+    copy.setVardas("Other");
+    EXPECT_EQ(s.getVardas(), "Tomas");
 }
 
-void testCopyAssignment() {
+TEST(StudentasTest, CopyAssignment) {
     Studentas s1;
-    std::vector<int> paz = {4, 6, 9};
     s1.setVardas("Lukas");
     s1.setPavarde("Lukauskas");
-    s1.setPaz(paz);
+    s1.setPaz({4, 6, 9});
     s1.setEgz(8);
+
     Studentas s2;
     s2 = s1;
-    assert(s2.getVardas() == s1.getVardas());
-    assert(s2.getPavarde() == s1.getPavarde());
-    assert(s2.getPaz() == s1.getPaz());
-    assert(s2.getEgz() == s1.getEgz());
+    EXPECT_EQ(s2.getVardas(), s1.getVardas());
+    EXPECT_EQ(s2.getPaz(), s1.getPaz());
+
     s1 = s1;
-    assert(s1.getVardas() == "Lukas");
-    std::cout << "Copy assignment operatoriaus testas sekmingas\n";
+    EXPECT_EQ(s1.getVardas(), "Lukas");
 }
 
-void testMoveConstructor() {
+TEST(StudentasTest, MoveConstructor) {
     Studentas s;
-    std::vector<int> paz = {3, 6, 10};
     s.setVardas("Mantas");
     s.setPavarde("Mantauskas");
-    s.setPaz(paz);
+    s.setPaz({3, 6, 10});
     s.setEgz(6);
-    Studentas perkeltas(std::move(s));
-    assert(perkeltas.getVardas() == "Mantas");
-    assert(perkeltas.getPaz() == paz);
-    assert(perkeltas.getEgz() == 6);
-    assert(s.getVardas().empty());
-    assert(s.getPaz().empty());
-    assert(s.getEgz() == 0);
-    std::cout << "Move konstruktoriaus testas sekmingas\n";
+
+    Studentas moved(std::move(s));
+    EXPECT_EQ(moved.getVardas(), "Mantas");
+    EXPECT_EQ(moved.getEgz(), 6);
+
+    EXPECT_TRUE(s.getVardas().empty());
+    EXPECT_TRUE(s.getPaz().empty());
+    EXPECT_EQ(s.getEgz(), 0);
 }
 
-void testMoveAssignment() {
+TEST(StudentasTest, MoveAssignment) {
     Studentas s;
-    std::vector<int> paz = {7, 8, 10};
     s.setVardas("Erikas");
     s.setPavarde("Erikauskas");
-    s.setPaz(paz);
+    s.setPaz({7, 8, 10});
     s.setEgz(9);
-    Studentas perkeltas;
-    perkeltas = std::move(s);
-    assert(perkeltas.getVardas() == "Erikas");
-    assert(perkeltas.getPaz() == paz);
-    assert(perkeltas.getEgz() == 9);
-    assert(s.getVardas().empty());
-    assert(s.getPaz().empty());
-    assert(s.getEgz() == 0);
-    std::cout << "Move assignment operatoriaus testas sekmingas\n";
+
+    Studentas moved;
+    moved = std::move(s);
+    EXPECT_EQ(moved.getVardas(), "Erikas");
+    EXPECT_EQ(moved.getEgz(), 9);
+    EXPECT_TRUE(s.getVardas().empty());
 }
 
-void testDestructor() {
+TEST(StudentasTest, Destructor) {
     {
         Studentas s;
-        s.setVardas("Laikinas");
-        s.setPavarde("Laikinauskas");
+        s.setVardas("Temp");
+        s.setPavarde("Tempauskas");
         s.setEgz(5);
-        std::vector<int> paz = {1, 2, 3};
-        s.setPaz(paz);
+        s.setPaz({1, 2, 3});
     }
-   std::cout << "Destructor konstruktoriaus testas sekmingas\n";
+    SUCCEED();
 }
 
-void testInputOutputOperators() {
-    std::stringstream srautas("Rokas Rokauskas 5 6 7 8\n");
+TEST(StudentasTest, InputOutputOperators) {
+    std::stringstream input("Rokas Rokauskas 5 6 7 8\n");
     Studentas s;
-    srautas >> s;
-    assert(s.getVardas() == "Rokas");
-    assert(s.getPavarde() == "Rokauskas");
-    assert(s.getPaz()[0] == 5);
-    assert(s.getPaz()[1] == 6);
-    assert(s.getPaz()[2] == 7);
-    assert(s.getEgz() == 8);
-    std::stringstream rezultatas;
-    rezultatas << s;
-    assert(rezultatas.str() == "Rokas Rokauskas 5 6 7 8");
-    std::cout << "Įvesties/išvesties operatorių testas sekmingas\n";
+    input >> s;
+    EXPECT_EQ(s.getVardas(), "Rokas");
+    EXPECT_EQ(s.getPavarde(), "Rokauskas");
+    EXPECT_EQ(s.getPaz()[0], 5);
+    EXPECT_EQ(s.getPaz()[1], 6);
+    EXPECT_EQ(s.getPaz()[2], 7);
+    EXPECT_EQ(s.getEgz(), 8);
+
+    std::stringstream output;
+    output << s;
+    EXPECT_EQ(output.str(), "Rokas Rokauskas 5 6 7 8");
 }
 
-void testAbstrakcijaZmogus() {
+TEST(ZmogusTest, AbstractClassViaStudentas) {
     Studentas s;
     Zmogus& ref = s;
-    ref.setVardas("Testas");
-    assert(ref.getVardas() == "Testas");
-    std::cout << "Abstrakcios klases Zmogus testas sekmingas\n";
+    ref.setVardas("Test");
+    ref.setPavarde("Testauskas");
+    EXPECT_EQ(ref.getVardas(), "Test");
+    EXPECT_EQ(ref.getPavarde(), "Testauskas");
+}
+
+TEST(FunkcijosTest, Average) {
+    std::vector<int> grades = {4, 6, 8, 10};
+    EXPECT_DOUBLE_EQ(vidurkis(grades), 7.0);
+
+    std::vector<int> empty = {};
+    EXPECT_DOUBLE_EQ(vidurkis(empty), 0.0);
+}
+
+TEST(FunkcijosTest, Median) {
+    std::vector<int> odd = {1, 3, 5};
+    EXPECT_DOUBLE_EQ(mediana(odd), 3.0);
+
+    std::vector<int> even = {1, 2, 3, 4};
+    EXPECT_DOUBLE_EQ(mediana(even), 2.5);
+
+    std::vector<int> empty = {};
+    EXPECT_DOUBLE_EQ(mediana(empty), 0.0);
+}
+
+TEST(StudentasTest, FinalGrade) {
+    Studentas s;
+    s.setPaz({8, 8, 8});
+    s.setEgz(8);
+    s.setGalutinisVid(0.4 * vidurkis(s.getPaz()) + 0.6 * s.getEgz());
+    EXPECT_NEAR(s.getGalutinisVid(), 8.0, 0.001);
+}
+
+int main(int argc, char **argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }
