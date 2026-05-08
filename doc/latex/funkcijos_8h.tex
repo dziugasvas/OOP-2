@@ -1,0 +1,151 @@
+\doxysection{include/\+funkcijos.h File Reference}
+\hypertarget{funkcijos_8h}{}\label{funkcijos_8h}\index{include/funkcijos.h@{include/funkcijos.h}}
+{\ttfamily \+\#include "{}Zmogus.\+h"{}}\newline
+{\ttfamily \+\#include "{}Studentas.\+h"{}}\newline
+{\ttfamily \+\#include $<$vector$>$}\newline
+{\ttfamily \+\#include $<$string$>$}\newline
+{\ttfamily \+\#include $<$fstream$>$}\newline
+{\ttfamily \+\#include $<$sstream$>$}\newline
+{\ttfamily \+\#include $<$stdexcept$>$}\newline
+{\ttfamily \+\#include $<$iostream$>$}\newline
+{\ttfamily \+\#include $<$algorithm$>$}\newline
+{\ttfamily \+\#include $<$type\+\_\+traits$>$}\newline
+{\ttfamily \+\#include $<$list$>$}\newline
+{\ttfamily \+\#include $<$iomanip$>$}\newline
+{\ttfamily \+\#include $<$deque$>$}\newline
+{\ttfamily \+\#include $<$chrono$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{funkcijos_8h_aa8e99f2199807b05d83e4080f6481a26}{generuoti\+Faila}} (const std::\+string \&failo\+Pavadinimas, int kiek\+Studentu, int nd\+Kiekis)
+\item 
+void \doxymbox{\hyperlink{funkcijos_8h_a53deb1bd198fe2d3e78b74b474d40be5}{outputas}} (const std::\+vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&grupe, char pasirinkimas)
+\item 
+void \doxymbox{\hyperlink{funkcijos_8h_a1b14375f6ca6248b55356604e7bb2a7c}{spausdinimas}} (const std::\+vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&grupe, char pasirinkimas)
+\item 
+void \doxymbox{\hyperlink{funkcijos_8h_a4d43358a267d9ecc6a834c3e11ebb0f1}{inputas}} (std::\+vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&grupe)
+\item 
+double \doxymbox{\hyperlink{funkcijos_8h_a327175b1cc7a837eada360c5ffa5ee7a}{mediana}} (const std::\+vector$<$ int $>$ \&paz)
+\item 
+double \doxymbox{\hyperlink{funkcijos_8h_a15b32de95e91af916262770c4a6aa345}{vidurkis}} (const std::\+vector$<$ int $>$ \&paz)
+\item 
+void \doxymbox{\hyperlink{funkcijos_8h_a203c149c03db69bd1144d2ecf8e0b2bd}{tyrimas1}} (const std::\+string \&failo\+Pavadinimas, int studentu\+Kiekis, int nd\+Kiekis)
+\item 
+void \doxymbox{\hyperlink{funkcijos_8h_a51aa096f32d6f0ceb649eef685335c65}{tyrimas2}} (const std::\+string \&failo\+Pavadinimas, char budas)
+\item 
+{\footnotesize template$<$typename konteineris$>$ }\\void \doxymbox{\hyperlink{funkcijos_8h_ad0c3768b8d7ea289a8f1be081d80618c}{nuskaitymas}} (konteineris \&grupe, std::\+string failas)
+\item 
+{\footnotesize template$<$typename konteineris$>$ }\\void \doxymbox{\hyperlink{funkcijos_8h_a4e9e2774ce9d14953a0806b26a5cb28e}{padalinti\+Studentus1}} (const konteineris \&grupe, konteineris \&vargsiukai, konteineris \&kietakai, char budas)
+\item 
+{\footnotesize template$<$typename konteineris$>$ }\\void \doxymbox{\hyperlink{funkcijos_8h_abfd16d7ee0527411426ff1f0bfa4dfc1}{padalinti\+Studentus2}} (konteineris \&grupe, konteineris \&vargsiukai, char budas)
+\item 
+{\footnotesize template$<$typename konteineris$>$ }\\void \doxymbox{\hyperlink{funkcijos_8h_a803c6a13360ca638790813173bac0142}{padalinti\+Studentus3}} (konteineris \&grupe, konteineris \&vargsiukai, char budas)
+\item 
+{\footnotesize template$<$typename konteineris$>$ }\\void \doxymbox{\hyperlink{funkcijos_8h_a81c8a70981f6ac3a16f40e5492c57c5e}{rusiavimas}} (konteineris \&grupe, char budas)
+\item 
+{\footnotesize template$<$typename konteineris$>$ }\\void \doxymbox{\hyperlink{funkcijos_8h_a13b5a92d2c3630d77a5e27ebc9481d6b}{spausdinti\+IFaila}} (const konteineris \&grupe, const std::\+string \&failo\+Pavadinimas, char budas)
+\item 
+{\footnotesize template$<$typename konteineris$>$ }\\void \doxymbox{\hyperlink{funkcijos_8h_ad8fc3ca3fddd825c88237daa491ca20c}{laiko\+Skaiciavimas}} (int strategija, int kriterijus, char budas, const std::\+string \&konteinerio\+Pavadinimas)
+\end{DoxyCompactItemize}
+
+
+\label{funkcijos_8h_doc-func-members}
+\Hypertarget{funkcijos_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{funkcijos_8h_aa8e99f2199807b05d83e4080f6481a26}\index{funkcijos.h@{funkcijos.h}!generuotiFaila@{generuotiFaila}}
+\index{generuotiFaila@{generuotiFaila}!funkcijos.h@{funkcijos.h}}
+\doxysubsubsection{\texorpdfstring{generuotiFaila()}{generuotiFaila()}}
+{\footnotesize\ttfamily \label{funkcijos_8h_aa8e99f2199807b05d83e4080f6481a26} 
+void generuoti\+Faila (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{failo\+Pavadinimas}{, }\item[{int}]{kiek\+Studentu}{, }\item[{int}]{nd\+Kiekis}{}\end{DoxyParamCaption})}
+
+\Hypertarget{funkcijos_8h_a4d43358a267d9ecc6a834c3e11ebb0f1}\index{funkcijos.h@{funkcijos.h}!inputas@{inputas}}
+\index{inputas@{inputas}!funkcijos.h@{funkcijos.h}}
+\doxysubsubsection{\texorpdfstring{inputas()}{inputas()}}
+{\footnotesize\ttfamily \label{funkcijos_8h_a4d43358a267d9ecc6a834c3e11ebb0f1} 
+void inputas (\begin{DoxyParamCaption}\item[{std::\+vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{grupe}{}\end{DoxyParamCaption})}
+
+\Hypertarget{funkcijos_8h_ad8fc3ca3fddd825c88237daa491ca20c}\index{funkcijos.h@{funkcijos.h}!laikoSkaiciavimas@{laikoSkaiciavimas}}
+\index{laikoSkaiciavimas@{laikoSkaiciavimas}!funkcijos.h@{funkcijos.h}}
+\doxysubsubsection{\texorpdfstring{laikoSkaiciavimas()}{laikoSkaiciavimas()}}
+{\footnotesize\ttfamily \label{funkcijos_8h_ad8fc3ca3fddd825c88237daa491ca20c} 
+template$<$typename konteineris$>$ \\
+void laiko\+Skaiciavimas (\begin{DoxyParamCaption}\item[{int}]{strategija}{, }\item[{int}]{kriterijus}{, }\item[{char}]{budas}{, }\item[{const std::\+string \&}]{konteinerio\+Pavadinimas}{}\end{DoxyParamCaption})}
+
+\Hypertarget{funkcijos_8h_a327175b1cc7a837eada360c5ffa5ee7a}\index{funkcijos.h@{funkcijos.h}!mediana@{mediana}}
+\index{mediana@{mediana}!funkcijos.h@{funkcijos.h}}
+\doxysubsubsection{\texorpdfstring{mediana()}{mediana()}}
+{\footnotesize\ttfamily \label{funkcijos_8h_a327175b1cc7a837eada360c5ffa5ee7a} 
+double mediana (\begin{DoxyParamCaption}\item[{const std::\+vector$<$ int $>$ \&}]{paz}{}\end{DoxyParamCaption})}
+
+\Hypertarget{funkcijos_8h_ad0c3768b8d7ea289a8f1be081d80618c}\index{funkcijos.h@{funkcijos.h}!nuskaitymas@{nuskaitymas}}
+\index{nuskaitymas@{nuskaitymas}!funkcijos.h@{funkcijos.h}}
+\doxysubsubsection{\texorpdfstring{nuskaitymas()}{nuskaitymas()}}
+{\footnotesize\ttfamily \label{funkcijos_8h_ad0c3768b8d7ea289a8f1be081d80618c} 
+template$<$typename konteineris$>$ \\
+void nuskaitymas (\begin{DoxyParamCaption}\item[{konteineris \&}]{grupe}{, }\item[{std::\+string}]{failas}{}\end{DoxyParamCaption})}
+
+\Hypertarget{funkcijos_8h_a53deb1bd198fe2d3e78b74b474d40be5}\index{funkcijos.h@{funkcijos.h}!outputas@{outputas}}
+\index{outputas@{outputas}!funkcijos.h@{funkcijos.h}}
+\doxysubsubsection{\texorpdfstring{outputas()}{outputas()}}
+{\footnotesize\ttfamily \label{funkcijos_8h_a53deb1bd198fe2d3e78b74b474d40be5} 
+void outputas (\begin{DoxyParamCaption}\item[{const std::\+vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{grupe}{, }\item[{char}]{pasirinkimas}{}\end{DoxyParamCaption})}
+
+\Hypertarget{funkcijos_8h_a4e9e2774ce9d14953a0806b26a5cb28e}\index{funkcijos.h@{funkcijos.h}!padalintiStudentus1@{padalintiStudentus1}}
+\index{padalintiStudentus1@{padalintiStudentus1}!funkcijos.h@{funkcijos.h}}
+\doxysubsubsection{\texorpdfstring{padalintiStudentus1()}{padalintiStudentus1()}}
+{\footnotesize\ttfamily \label{funkcijos_8h_a4e9e2774ce9d14953a0806b26a5cb28e} 
+template$<$typename konteineris$>$ \\
+void padalinti\+Studentus1 (\begin{DoxyParamCaption}\item[{const konteineris \&}]{grupe}{, }\item[{konteineris \&}]{vargsiukai}{, }\item[{konteineris \&}]{kietakai}{, }\item[{char}]{budas}{}\end{DoxyParamCaption})}
+
+\Hypertarget{funkcijos_8h_abfd16d7ee0527411426ff1f0bfa4dfc1}\index{funkcijos.h@{funkcijos.h}!padalintiStudentus2@{padalintiStudentus2}}
+\index{padalintiStudentus2@{padalintiStudentus2}!funkcijos.h@{funkcijos.h}}
+\doxysubsubsection{\texorpdfstring{padalintiStudentus2()}{padalintiStudentus2()}}
+{\footnotesize\ttfamily \label{funkcijos_8h_abfd16d7ee0527411426ff1f0bfa4dfc1} 
+template$<$typename konteineris$>$ \\
+void padalinti\+Studentus2 (\begin{DoxyParamCaption}\item[{konteineris \&}]{grupe}{, }\item[{konteineris \&}]{vargsiukai}{, }\item[{char}]{budas}{}\end{DoxyParamCaption})}
+
+\Hypertarget{funkcijos_8h_a803c6a13360ca638790813173bac0142}\index{funkcijos.h@{funkcijos.h}!padalintiStudentus3@{padalintiStudentus3}}
+\index{padalintiStudentus3@{padalintiStudentus3}!funkcijos.h@{funkcijos.h}}
+\doxysubsubsection{\texorpdfstring{padalintiStudentus3()}{padalintiStudentus3()}}
+{\footnotesize\ttfamily \label{funkcijos_8h_a803c6a13360ca638790813173bac0142} 
+template$<$typename konteineris$>$ \\
+void padalinti\+Studentus3 (\begin{DoxyParamCaption}\item[{konteineris \&}]{grupe}{, }\item[{konteineris \&}]{vargsiukai}{, }\item[{char}]{budas}{}\end{DoxyParamCaption})}
+
+\Hypertarget{funkcijos_8h_a81c8a70981f6ac3a16f40e5492c57c5e}\index{funkcijos.h@{funkcijos.h}!rusiavimas@{rusiavimas}}
+\index{rusiavimas@{rusiavimas}!funkcijos.h@{funkcijos.h}}
+\doxysubsubsection{\texorpdfstring{rusiavimas()}{rusiavimas()}}
+{\footnotesize\ttfamily \label{funkcijos_8h_a81c8a70981f6ac3a16f40e5492c57c5e} 
+template$<$typename konteineris$>$ \\
+void rusiavimas (\begin{DoxyParamCaption}\item[{konteineris \&}]{grupe}{, }\item[{char}]{budas}{}\end{DoxyParamCaption})}
+
+\Hypertarget{funkcijos_8h_a1b14375f6ca6248b55356604e7bb2a7c}\index{funkcijos.h@{funkcijos.h}!spausdinimas@{spausdinimas}}
+\index{spausdinimas@{spausdinimas}!funkcijos.h@{funkcijos.h}}
+\doxysubsubsection{\texorpdfstring{spausdinimas()}{spausdinimas()}}
+{\footnotesize\ttfamily \label{funkcijos_8h_a1b14375f6ca6248b55356604e7bb2a7c} 
+void spausdinimas (\begin{DoxyParamCaption}\item[{const std::\+vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{grupe}{, }\item[{char}]{pasirinkimas}{}\end{DoxyParamCaption})}
+
+\Hypertarget{funkcijos_8h_a13b5a92d2c3630d77a5e27ebc9481d6b}\index{funkcijos.h@{funkcijos.h}!spausdintiIFaila@{spausdintiIFaila}}
+\index{spausdintiIFaila@{spausdintiIFaila}!funkcijos.h@{funkcijos.h}}
+\doxysubsubsection{\texorpdfstring{spausdintiIFaila()}{spausdintiIFaila()}}
+{\footnotesize\ttfamily \label{funkcijos_8h_a13b5a92d2c3630d77a5e27ebc9481d6b} 
+template$<$typename konteineris$>$ \\
+void spausdinti\+IFaila (\begin{DoxyParamCaption}\item[{const konteineris \&}]{grupe}{, }\item[{const std::\+string \&}]{failo\+Pavadinimas}{, }\item[{char}]{budas}{}\end{DoxyParamCaption})}
+
+\Hypertarget{funkcijos_8h_a203c149c03db69bd1144d2ecf8e0b2bd}\index{funkcijos.h@{funkcijos.h}!tyrimas1@{tyrimas1}}
+\index{tyrimas1@{tyrimas1}!funkcijos.h@{funkcijos.h}}
+\doxysubsubsection{\texorpdfstring{tyrimas1()}{tyrimas1()}}
+{\footnotesize\ttfamily \label{funkcijos_8h_a203c149c03db69bd1144d2ecf8e0b2bd} 
+void tyrimas1 (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{failo\+Pavadinimas}{, }\item[{int}]{studentu\+Kiekis}{, }\item[{int}]{nd\+Kiekis}{}\end{DoxyParamCaption})}
+
+\Hypertarget{funkcijos_8h_a51aa096f32d6f0ceb649eef685335c65}\index{funkcijos.h@{funkcijos.h}!tyrimas2@{tyrimas2}}
+\index{tyrimas2@{tyrimas2}!funkcijos.h@{funkcijos.h}}
+\doxysubsubsection{\texorpdfstring{tyrimas2()}{tyrimas2()}}
+{\footnotesize\ttfamily \label{funkcijos_8h_a51aa096f32d6f0ceb649eef685335c65} 
+void tyrimas2 (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{failo\+Pavadinimas}{, }\item[{char}]{budas}{}\end{DoxyParamCaption})}
+
+\Hypertarget{funkcijos_8h_a15b32de95e91af916262770c4a6aa345}\index{funkcijos.h@{funkcijos.h}!vidurkis@{vidurkis}}
+\index{vidurkis@{vidurkis}!funkcijos.h@{funkcijos.h}}
+\doxysubsubsection{\texorpdfstring{vidurkis()}{vidurkis()}}
+{\footnotesize\ttfamily \label{funkcijos_8h_a15b32de95e91af916262770c4a6aa345} 
+double vidurkis (\begin{DoxyParamCaption}\item[{const std::\+vector$<$ int $>$ \&}]{paz}{}\end{DoxyParamCaption})}
+
