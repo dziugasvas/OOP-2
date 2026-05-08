@@ -1,0 +1,233 @@
+\begin{theindex}
+
+  \item {\texorpdfstring{$\sim$}{\string~}Studentas}
+    \subitem {Studentas}, \hyperpage{13}
+  \item {\texorpdfstring{$\sim$}{\string~}Zmogus}
+    \subitem {Zmogus}, \hyperpage{19}
+
+  \indexspace
+
+  \item {egz}
+    \subitem {Studentas}, \hyperpage{17}
+
+  \indexspace
+
+  \item {funkcijos.cpp}
+    \subitem {generuotiFaila}, \hyperpage{32}
+    \subitem {inputas}, \hyperpage{32}
+    \subitem {mediana}, \hyperpage{32}
+    \subitem {outputas}, \hyperpage{32}
+    \subitem {spausdinimas}, \hyperpage{32}
+    \subitem {tyrimas1}, \hyperpage{33}
+    \subitem {tyrimas2}, \hyperpage{33}
+    \subitem {vidurkis}, \hyperpage{33}
+  \item {funkcijos.h}
+    \subitem {generuotiFaila}, \hyperpage{22}
+    \subitem {inputas}, \hyperpage{22}
+    \subitem {laikoSkaiciavimas}, \hyperpage{22}
+    \subitem {mediana}, \hyperpage{22}
+    \subitem {nuskaitymas}, \hyperpage{22}
+    \subitem {outputas}, \hyperpage{22}
+    \subitem {padalintiStudentus1}, \hyperpage{22}
+    \subitem {padalintiStudentus2}, \hyperpage{23}
+    \subitem {padalintiStudentus3}, \hyperpage{23}
+    \subitem {rusiavimas}, \hyperpage{23}
+    \subitem {spausdinimas}, \hyperpage{23}
+    \subitem {spausdintiIFaila}, \hyperpage{23}
+    \subitem {tyrimas1}, \hyperpage{23}
+    \subitem {tyrimas2}, \hyperpage{24}
+    \subitem {vidurkis}, \hyperpage{24}
+
+  \indexspace
+
+  \item {galutinisMed}
+    \subitem {Studentas}, \hyperpage{17}
+  \item {galutinisVid}
+    \subitem {Studentas}, \hyperpage{17}
+  \item {generuotiFaila}
+    \subitem {funkcijos.cpp}, \hyperpage{32}
+    \subitem {funkcijos.h}, \hyperpage{22}
+  \item {getEgz}
+    \subitem {Studentas}, \hyperpage{13}
+  \item {getGalutinisMed}
+    \subitem {Studentas}, \hyperpage{13}
+  \item {getGalutinisVid}
+    \subitem {Studentas}, \hyperpage{14}
+  \item {getPavarde}
+    \subitem {Studentas}, \hyperpage{14}
+    \subitem {Zmogus}, \hyperpage{19}
+  \item {getPaz}
+    \subitem {Studentas}, \hyperpage{14}
+  \item {getRez}
+    \subitem {Studentas}, \hyperpage{14}
+  \item {getVardas}
+    \subitem {Studentas}, \hyperpage{14}
+    \subitem {Zmogus}, \hyperpage{19}
+
+  \indexspace
+
+  \item {include Directory Reference}, \hyperpage{9}
+  \item {include/funkcijos.h}, \hyperpage{21}, \hyperpage{24}
+  \item {include/Studentas.h}, \hyperpage{28, 29}
+  \item {include/Zmogus.h}, \hyperpage{30, 31}
+  \item {inputas}
+    \subitem {funkcijos.cpp}, \hyperpage{32}
+    \subitem {funkcijos.h}, \hyperpage{22}
+  \item {isvalytiPaz}
+    \subitem {Studentas}, \hyperpage{14}
+
+  \indexspace
+
+  \item {laikoSkaiciavimas}
+    \subitem {funkcijos.h}, \hyperpage{22}
+
+  \indexspace
+
+  \item {main}
+    \subitem {main.cpp}, \hyperpage{34}
+  \item {main.cpp}
+    \subitem {main}, \hyperpage{34}
+    \subitem {pavardes}, \hyperpage{34}
+    \subitem {vardai}, \hyperpage{34}
+  \item {mediana}
+    \subitem {funkcijos.cpp}, \hyperpage{32}
+    \subitem {funkcijos.h}, \hyperpage{22}
+
+  \indexspace
+
+  \item {nuskaitymas}
+    \subitem {funkcijos.h}, \hyperpage{22}
+
+  \indexspace
+
+  \item {operator$<$$<$}
+    \subitem {Zmogus}, \hyperpage{20}
+  \item {operator$>$$>$}
+    \subitem {Zmogus}, \hyperpage{20}
+  \item {operator=}
+    \subitem {Studentas}, \hyperpage{14, 15}
+  \item {outputas}
+    \subitem {funkcijos.cpp}, \hyperpage{32}
+    \subitem {funkcijos.h}, \hyperpage{22}
+
+  \indexspace
+
+  \item {padalintiStudentus1}
+    \subitem {funkcijos.h}, \hyperpage{22}
+  \item {padalintiStudentus2}
+    \subitem {funkcijos.h}, \hyperpage{23}
+  \item {padalintiStudentus3}
+    \subitem {funkcijos.h}, \hyperpage{23}
+  \item {pavarde}
+    \subitem {Zmogus}, \hyperpage{20}
+  \item {pavardes}
+    \subitem {main.cpp}, \hyperpage{34}
+  \item {paz}
+    \subitem {Studentas}, \hyperpage{17}
+  \item {pridetiPaz}
+    \subitem {Studentas}, \hyperpage{15}
+  \item {print}
+    \subitem {Studentas}, \hyperpage{15}
+    \subitem {Zmogus}, \hyperpage{19}
+
+  \indexspace
+
+  \item {read}
+    \subitem {Studentas}, \hyperpage{15}
+    \subitem {Zmogus}, \hyperpage{19}
+  \item {rez}
+    \subitem {Studentas}, \hyperpage{17}
+  \item {rusiavimas}
+    \subitem {funkcijos.h}, \hyperpage{23}
+
+  \indexspace
+
+  \item {setEgz}
+    \subitem {Studentas}, \hyperpage{15}
+  \item {setGalutinisMed}
+    \subitem {Studentas}, \hyperpage{15}
+  \item {setGalutinisVid}
+    \subitem {Studentas}, \hyperpage{16}
+  \item {setPavarde}
+    \subitem {Studentas}, \hyperpage{16}
+    \subitem {Zmogus}, \hyperpage{20}
+  \item {setPaz}
+    \subitem {Studentas}, \hyperpage{16}
+  \item {setRez}
+    \subitem {Studentas}, \hyperpage{16}
+  \item {setVardas}
+    \subitem {Studentas}, \hyperpage{16}
+    \subitem {Zmogus}, \hyperpage{20}
+  \item {spausdinimas}
+    \subitem {funkcijos.cpp}, \hyperpage{32}
+    \subitem {funkcijos.h}, \hyperpage{23}
+  \item {spausdintiIFaila}
+    \subitem {funkcijos.h}, \hyperpage{23}
+  \item {src Directory Reference}, \hyperpage{9}
+  \item {src/funkcijos.cpp}, \hyperpage{32}
+  \item {src/main.cpp}, \hyperpage{33}
+  \item {Studentas}, \hyperpage{11}
+    \subitem {\texorpdfstring{$\sim$}{\string~}Studentas}, 
+		\hyperpage{13}
+    \subitem {egz}, \hyperpage{17}
+    \subitem {galutinisMed}, \hyperpage{17}
+    \subitem {galutinisVid}, \hyperpage{17}
+    \subitem {getEgz}, \hyperpage{13}
+    \subitem {getGalutinisMed}, \hyperpage{13}
+    \subitem {getGalutinisVid}, \hyperpage{14}
+    \subitem {getPavarde}, \hyperpage{14}
+    \subitem {getPaz}, \hyperpage{14}
+    \subitem {getRez}, \hyperpage{14}
+    \subitem {getVardas}, \hyperpage{14}
+    \subitem {isvalytiPaz}, \hyperpage{14}
+    \subitem {operator=}, \hyperpage{14, 15}
+    \subitem {paz}, \hyperpage{17}
+    \subitem {pridetiPaz}, \hyperpage{15}
+    \subitem {print}, \hyperpage{15}
+    \subitem {read}, \hyperpage{15}
+    \subitem {rez}, \hyperpage{17}
+    \subitem {setEgz}, \hyperpage{15}
+    \subitem {setGalutinisMed}, \hyperpage{15}
+    \subitem {setGalutinisVid}, \hyperpage{16}
+    \subitem {setPavarde}, \hyperpage{16}
+    \subitem {setPaz}, \hyperpage{16}
+    \subitem {setRez}, \hyperpage{16}
+    \subitem {setVardas}, \hyperpage{16}
+    \subitem {Studentas}, \hyperpage{13}
+
+  \indexspace
+
+  \item {tyrimas1}
+    \subitem {funkcijos.cpp}, \hyperpage{33}
+    \subitem {funkcijos.h}, \hyperpage{23}
+  \item {tyrimas2}
+    \subitem {funkcijos.cpp}, \hyperpage{33}
+    \subitem {funkcijos.h}, \hyperpage{24}
+
+  \indexspace
+
+  \item {vardai}
+    \subitem {main.cpp}, \hyperpage{34}
+  \item {vardas}
+    \subitem {Zmogus}, \hyperpage{20}
+  \item {vidurkis}
+    \subitem {funkcijos.cpp}, \hyperpage{33}
+    \subitem {funkcijos.h}, \hyperpage{24}
+
+  \indexspace
+
+  \item {Zmogus}, \hyperpage{17}
+    \subitem {\texorpdfstring{$\sim$}{\string~}Zmogus}, \hyperpage{19}
+    \subitem {getPavarde}, \hyperpage{19}
+    \subitem {getVardas}, \hyperpage{19}
+    \subitem {operator$<$$<$}, \hyperpage{20}
+    \subitem {operator$>$$>$}, \hyperpage{20}
+    \subitem {pavarde}, \hyperpage{20}
+    \subitem {print}, \hyperpage{19}
+    \subitem {read}, \hyperpage{19}
+    \subitem {setPavarde}, \hyperpage{20}
+    \subitem {setVardas}, \hyperpage{20}
+    \subitem {vardas}, \hyperpage{20}
+    \subitem {Zmogus}, \hyperpage{18, 19}
+
+\end{theindex}
