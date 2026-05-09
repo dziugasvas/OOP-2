@@ -83,7 +83,7 @@ Pasirinkus atitinkamą meniu punktą, programa pateikia papildomas instrukcijas 
 
 ### Nuotrauka
 
-(Bus nuotrauka)
+<img width="449" height="602" alt="image" src="https://github.com/user-attachments/assets/1c9313f6-a9f3-448b-ba9f-16289ccdc9a7" />
 
 ## v1.5 rezultatai
 
