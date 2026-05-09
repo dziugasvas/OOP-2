@@ -1,7 +1,7 @@
 all: create
 
 create:
-	g++ -std=c++17 -Iinclude src/main.cpp src/funkcijos.cpp tests/testas.cpp -o programa
+	g++ -std=c++17 -Iinclude src/main.cpp src/funkcijos.cpp -o programa
 
 O1:
 	g++ -std=c++17 -O1 src/main.cpp src/funkcijos.cpp -o programa

@@ -12,8 +12,8 @@ Programoje taip pat realizuotos trys studentų skirstymo strategijos, kurių vei
 # Diegimas ir paleidimas
 1. Nusiklonuokite repozitoriją:
 ```
-git clone https://github.com/dziugasvas/OOP-1.git
-cd OOP-1
+git clone https://github.com/dziugasvas/OOP-2.git
+cd OOP-2
 ```
 2. Įsidiekite reikalingus įrankius (jei jų dar neturite):
 
