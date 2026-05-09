@@ -67,6 +67,9 @@ Pasirinkus atitinkamą meniu punktą, programa pateikia papildomas instrukcijas 
 
 ### Unit testai
 
+Testai parašyti naudojant Google Test framework'ą:
+
+-----------------------------
 | Testas       | Rezultatas |
 |----------------------|----|
 | DefaultConstructor   | ✅ |
@@ -80,6 +83,7 @@ Pasirinkus atitinkamą meniu punktą, programa pateikia papildomas instrukcijas 
 | Vidurkis             | ✅ |
 | Mediana              | ✅ |
 | GalutinisBalas       | ✅ |
+-----------------------------
 
 ### Nuotrauka
 
