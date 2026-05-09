@@ -103,7 +103,7 @@ TEST(StudentasTest, InputOutputOperators) {
     EXPECT_EQ(output.str(), "Rokas Rokauskas 5 6 7 8");
 }
 
-TEST(ZmogusTest, AbstractClassViaStudentas) {
+TEST(ZmogusTest, ZmogusAbstrakcija) {
     Studentas s;
     Zmogus& ref = s;
     ref.setVardas("Test");
@@ -112,7 +112,7 @@ TEST(ZmogusTest, AbstractClassViaStudentas) {
     EXPECT_EQ(ref.getPavarde(), "Testauskas");
 }
 
-TEST(FunkcijosTest, Average) {
+TEST(FunkcijosTest, Vidurkis) {
     std::vector<int> grades = {4, 6, 8, 10};
     EXPECT_DOUBLE_EQ(vidurkis(grades), 7.0);
 
@@ -120,7 +120,7 @@ TEST(FunkcijosTest, Average) {
     EXPECT_DOUBLE_EQ(vidurkis(empty), 0.0);
 }
 
-TEST(FunkcijosTest, Median) {
+TEST(FunkcijosTest, Mediana) {
     std::vector<int> odd = {1, 3, 5};
     EXPECT_DOUBLE_EQ(mediana(odd), 3.0);
 
@@ -131,7 +131,7 @@ TEST(FunkcijosTest, Median) {
     EXPECT_DOUBLE_EQ(mediana(empty), 0.0);
 }
 
-TEST(StudentasTest, FinalGrade) {
+TEST(StudentasTest, GalutinisBalas) {
     Studentas s;
     s.setPaz({8, 8, 8});
     s.setEgz(8);

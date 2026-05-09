@@ -35,6 +35,10 @@ make
 ```
 make run
 ```
+5. Paleiskite testus:
+```
+make gtest
+```
 
 # Naudojimosi instrukcija
 
@@ -56,6 +60,30 @@ Pasirinkus atitinkamą meniu punktą, programa pateikia papildomas instrukcijas 
 |--------------------------|------|------------| 
 | Apple M4 (10 branduolių) | 24GB | NVMe 512GB |      
 ------------------------------------------------
+
+## v2.0 rezultatai
+
+Šioje versijoje pridėti Google Test unit testai ir Doxygen dokumentacija (HTML + PDF).
+
+### Unit testai
+
+| Testas       | Rezultatas |
+|----------------------|----|
+| DefaultConstructor   | ✅ |
+| CopyConstructor      | ✅ |
+| CopyAssignment       | ✅ |
+| MoveConstructor      | ✅ |
+| MoveAssignment       | ✅ |
+| Destructor           | ✅ |
+| InputOutputOperators | ✅ |
+| ZmogusAbstrakcija    | ✅ |
+| Vidurkis             | ✅ |
+| Mediana              | ✅ |
+| GalutinisBalas       | ✅ |
+
+### Nuotrauka
+
+(Bus nuotrauka)
 
 ## v1.5 rezultatai
 
@@ -88,3 +116,32 @@ Pasirinkus atitinkamą meniu punktą, programa pateikia papildomas instrukcijas 
 
 <img width="343" height="131" alt="Screenshot at Apr 26 20-51-33" src="https://github.com/user-attachments/assets/b449e0d0-504c-4785-8fbe-da3d9a6920c5" />
 
+## v1.1 rezultatai
+
+Šioje versijoje (v1.1) programa perrašyta naudojant `class` vietoje `struct`. 
+Atliktas tyrimas siekiant palyginti šių dviejų realizacijų efektyvumą apdorojant studentų duomenis.
+
+Testavimas atliktas:
+- naudojant **vector konteinerį**
+- taikant **3 skirstymo strategiją (partition)**
+- su skirtingais kompiliatoriaus optimizavimo lygiais: **-O1, -O2, -O3**
+
+# Tyrimo rezultatai
+
+100000 studentų
+
+| Optimizacija | Laikas (class) | Laikas (struct) | Failo dydis (class) | Failo dydis (struct) |
+|--------------|----------------|-----------------|---------------------|----------------------|
+| -O1          |  0.259675 s    | 0.246076 s      | 326 KB              |     339 KB           |
+| -O2          |  0.249686 s    | 0.244191 s      | 309 KB              |     322 KB           |
+| -O3          |  0.249245 s    | 0.247485 s      | 341 KB              |     323 KB           |
+------------------------------------------------------------------------------------------------
+
+1000000 studentų
+
+| Optimizacija | Laikas (class) | Laikas (struct) | Failo dydis (class) | Failo dydis (struct) |
+|--------------|----------------|-----------------|---------------------|----------------------|
+| -O1          | 1.30572 s      | 1.23554 s       | 326 KB              |  339 KB              |
+| -O2          | 1.25852 s      | 1.20096 s       | 309 KB              |  322 KB              |
+| -O3          | 1.25299 s      | 1.20199 s       | 341 KB              |  323 KB              |
+------------------------------------------------------------------------------------------------
